@@ -1,5 +1,5 @@
 package dptest
 
 func DoIt() string{
-  return "DO IT 2"
+  return "DO IT version 1"
 }
