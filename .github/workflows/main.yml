@@ -1,0 +1,25 @@
+name: Test
+on:
+  push:
+    branches:
+      - main
+
+permissions:
+  id-token: write
+  contents: read
+
+jobs:
+  # call-reusable:
+  #   uses: ./.github/workflows/reuseable.yml
+  #   secrets: inherit
+
+  matrix:
+    strategy:
+      fail-fast: false
+      matrix:
+        runner:
+          - [ubuntu-latest]
+    runs-on: ["${{ matrix.runner }}"]
+    steps:
+      - uses: actions/checkout@v4
+      - run: date
